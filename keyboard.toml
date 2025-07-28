@@ -1,6 +1,6 @@
 [keyboard]
-name = "totemist-inner"
-product_name = "totemist-inner"
+name = "Totemist"
+product_name = "Totemist"
 vendor_id = 0x4c4b
 product_id = 0x4643
 manufacturer = "RMK"

@@ -1,8 +1,8 @@
 [package]
-name = "totemist-inner"
+name = "totemist-rmk"
 version = "0.1.0"
-authors = ["Haobo Gu <haobogu@outlook.com>"]
-description = "Keyboard firmware written in Rust"
+authors = ["LilDojd <yawner@pm.me>"]
+description = "RMK Totemist firmware"
 homepage = "https://github.com/haobogu/rmk"
 repository = "https://github.com/haobogu/rmk"
 readme = "README.md"

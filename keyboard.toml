@@ -78,7 +78,7 @@ PageDown @cut      @copy  @paste SHIFTED(Kc9)         SHIFTED(Kc0)  1  2  3  SHI
 [[layer]]
 name = "high"
 keys = """
-SHIFTED(1)     SHIFTED(2) SHIFTED(3) SHIFTED(4) SHIFTED(5)                    SHIFTED(6)     NonusBackslash SHIFTED(NonusBackslash) No No
+SHIFTED(1)     SHIFTED(2) NonusHash  SHIFTED(4) SHIFTED(5)                    SHIFTED(6)     NonusBackslash SHIFTED(NonusBackslash) No No
 Grave          No         No         No         Quote                         SHIFTED(7)     No             No                      No No
 SHIFTED(Grave) No         No         No         Semicolon                     SHIFTED(Comma) SHIFTED(Dot)   No                      No No
                           __         __         _________                     __________ __________     __

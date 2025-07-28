@@ -33,6 +33,7 @@ in
     pkgs.git
     pkgs.cargo-make
     pkgs.flip-link
+    pkgs.cargo-expand
     rmkit
   ];
 }

@@ -6,6 +6,9 @@ Keyboard firmware for [the Totemist keyboard][] using [RMK][]. With [Vial][] sup
 [RMK]: https://github.com/HaoboGu/rmk
 [Vial]: https://get.vial.today
 
+> [!WARNING]  
+> The provided keymap is **not production-ready** and will require user-specific tweaking. I have not taken any care configuring RMK for a pleasant typing experience. In particular, the **home-row modifiers** are configured in a way that may not suit all typing styles and could cause unintended behavior. Please review and adjust the layout to match your preferences and ergonomics before daily use.
+
 ## uf2 support
 
 If you’re using the Adafruit_nRF52_Bootloader (pre-installed on the nice!nano), you’re in luck! This bootloader supports the .uf2 firmware format, which eliminates the need for a debugging probe to flash your firmware. RMK uses the `cargo-make` tool to generate .uf2 firmware, with the generation process defined in the `Makefile.toml`.

@@ -1,0 +1,20 @@
+*.bin
+*.elf
+*.hex
+*.uf2
+
+.DS_Store
+.env
+
+**/*.rs.bk
+
+# Devenv
+.devenv*
+devenv.local.nix
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
+/target/

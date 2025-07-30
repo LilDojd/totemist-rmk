@@ -35,6 +35,7 @@ in
     pkgs.flip-link
     pkgs.cargo-expand
     pkgs.cargo-binutils
+    pkgs.cargo-edit
     rmkit
   ];
 }

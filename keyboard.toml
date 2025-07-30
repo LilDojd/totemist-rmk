@@ -4,7 +4,8 @@ product_name = "Totemist"
 vendor_id = 0x1D50
 product_id = 0x615E
 manufacturer = "RMK"
-board = "XIAO BLE"
+chip = "nrf52840"
+# board = "XIAO BLE"
 
 [layout]
 # WARNING: Currently row2col/col2row is set in RMK's feature gate, row2col config here is valid ONLY when you're using cloud compilation.
@@ -24,6 +25,7 @@ matrix_map = """
 # ┌─────────────────────────────────────────────────┐
 # │ q w e r t y                                     │
 # └─────────────────────────────────────────────────┘
+# TH behabior with Key/Mod for the row is further defined as *HMR
 # ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 # ┃     Q     ┃     W     ┃     E     ┃     R     ┃     T     ┃   ┃     Y     ┃     U     ┃     I     ┃     O     ┃     P     ┃
 # ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
@@ -48,7 +50,7 @@ Z           X           C             V            B                 N     M    
 # ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
 # ┃    ESC    ┃ CAPSLOCK  ┃     ↑     ┃           ┃     {     ┃   ┃     }     ┃     7     ┃     8     ┃     9     ┃    =/+    ┃
 # ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-# ┃   PGUP    ┃     <-    ┃     ↓     ┃     ->    ┃     [     ┃   ┃     ]     ┃     4     ┃     5     ┃     6     ┃     -     ┃
+# ┃   PGUP    ┃     <-    ┃     ↓     ┃     ->    ┃     [     ┃   ┃     ]     ┃     4     ┃     5     ┃     6     ┃     -     ┃ *HMR
 # ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 # ┃   PGDN    ┃     Cut   ┃    Copy   ┃   Paste   ┃     (     ┃   ┃     )     ┃     1     ┃     2     ┃     3     ┃     *     ┃
 # ┗━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -58,18 +60,18 @@ Z           X           C             V            B                 N     M    
 [[layer]]
 name = "low"
 keys = """
-Escape   CapsLock  Up     No     SHIFTED(lbrc)        SHIFTED(rbrc) 7  8  9  Equal
-PageUp   Left      Down   Right  LeftBracket          RightBracket  4  5  6  Minus
-PageDown @cut      @copy  @paste SHIFTED(Kc9)         SHIFTED(Kc0)  1  2  3  SHIFTED(Kc8)
-                   LShift ______ _____________        ____________  _  0
+Escape           CapsLock       Up               No               SHIFTED(lbrc)        SHIFTED(rbrc) 7            8             9           Equal
+MT(PageUp, LGui) MT(Left, LAlt) MT(Down, LShift) MT(Right, LCtrl) LeftBracket          RightBracket  MT(4, RCtrl) MT(5, RShift) MT(6, RAlt) MT(Minus, RGui)
+PageDown         @cut           @copy            @paste           SHIFTED(Kc9)         SHIFTED(Kc0)  1            2             3           SHIFTED(Kc8)
+                                LShift           ______           _____________        ____________  _            0
 """
 # ┌─────────────────────────────────────────────────┐
 # │ h i g h                                         │
 # └─────────────────────────────────────────────────┘
 # ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓   ┏━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┳━━━━━━━━━━━┓
-# ┃     !     ┃     @     ┃     #     ┃     $     ┃     %     ┃   ┃     ^     ┃     \     ┃     |     ┃           ┃           ┃
+# ┃     !     ┃     @     ┃     #     ┃     $     ┃     %     ┃   ┃     ^     ┃     \     ┃     |     ┃           ┃     +    ┃
 # ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
-# ┃     `     ┃           ┃           ┃           ┃     '     ┃   ┃     &     ┃           ┃           ┃           ┃           ┃
+# ┃     `     ┃           ┃           ┃           ┃     '     ┃   ┃     &     ┃           ┃           ┃           ┃     _     ┃
 # ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫
 # ┃     ~     ┃           ┃           ┃           ┃     ;     ┃   ┃     <     ┃     >     ┃           ┃           ┃           ┃
 # ┗━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┛
@@ -78,8 +80,8 @@ PageDown @cut      @copy  @paste SHIFTED(Kc9)         SHIFTED(Kc0)  1  2  3  SHI
 [[layer]]
 name = "high"
 keys = """
-SHIFTED(1)     SHIFTED(2) NonusHash  SHIFTED(4) SHIFTED(5)                    SHIFTED(6)     NonusBackslash SHIFTED(NonusBackslash) No No
-Grave          No         No         No         Quote                         SHIFTED(7)     No             No                      No No
+SHIFTED(1)     SHIFTED(2) NonusHash  SHIFTED(4) SHIFTED(5)                    SHIFTED(6)     NonusBackslash SHIFTED(NonusBackslash) No SHIFTED(Equal)
+Grave          No         No         No         Quote                         SHIFTED(7)     No             No                      No SHIFTED(Minus)
 SHIFTED(Grave) No         No         No         Semicolon                     SHIFTED(Comma) SHIFTED(Dot)   No                      No No
                           __         __         _________                     __________ __________     __
 """
@@ -118,9 +120,14 @@ adjust = 3
 
 [ble]
 enabled = true
+battery_adc_pin = "vddh"
+
+[storage]
+enabled = true
+clear_storage = false
 
 [behavior]
-tap_hold = { enable_hrm = true }
+tap_hold = { enable_hrm = true, permissive_hold = true, hold_timeout = "150ms" }
 
 [split]
 connection = "ble"

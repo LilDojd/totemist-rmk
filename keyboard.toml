@@ -127,7 +127,7 @@ enabled = true
 clear_storage = false
 
 [behavior]
-tap_hold = { enable_hrm = true, permissive_hold = true, hold_timeout = "150ms" }
+tap_hold = { enable_hrm = true, permissive_hold = true, chordal_hold = true, prior_idle_time = "120ms", hold_timeout = "250ms" }
 
 [split]
 connection = "ble"
